@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
 <meta charset="UTF-8"/>
@@ -20,7 +21,8 @@ nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-betwe
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 40px 80px;position:relative;overflow:hidden;}
 #hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(26,111,255,.18) 0%,transparent 55%),radial-gradient(ellipse at 10% 80%,rgba(26,111,255,.08) 0%,transparent 50%),linear-gradient(180deg,var(--bg) 0%,#0d1020 100%);z-index:0;}
 #hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;z-index:0;pointer-events:none;}
-.hero-inner{position:relative;z-index:1}.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:28px;background:rgba(26,111,255,.1);border:1px solid rgba(26,111,255,.25);padding:8px 16px;width:fit-content;opacity:0;animation:fadeUp .6s .3s forwards;}
+.hero-inner{position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:28px;background:rgba(26,111,255,.1);border:1px solid rgba(26,111,255,.25);padding:8px 16px;width:fit-content;opacity:0;animation:fadeUp .6s .3s forwards;}
 .hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,18vw,15rem);line-height:.88;letter-spacing:-.01em;opacity:0;animation:fadeUp .8s .5s forwards;}
 .hero-title .line1{display:block;color:#fff;text-shadow:0 0 60px rgba(26,111,255,.3),0 4px 40px rgba(0,0,0,.8);}
 .hero-title .line2{display:block;color:var(--blue);text-shadow:0 0 80px rgba(26,111,255,.6);}
@@ -47,54 +49,92 @@ nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-betwe
 .what-bg{background:var(--bg2)}.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:50px}
 @media(max-width:680px){.what-grid{grid-template-columns:1fr;gap:36px}}
 .what-body{font-size:.97rem;color:var(--light-gray);line-height:1.85;font-weight:300}.what-body b{color:var(--white);font-weight:700}
-.edu-section{background:var(--bg3);border-top:1px solid var(--card-border)}
-.edu-intro{font-size:.97rem;color:var(--light-gray);max-width:560px;line-height:1.8;font-weight:300;margin-top:20px;margin-bottom:60px;}
-.edu-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--card-border)}
-.edu-card{background:var(--card-bg);padding:44px 32px;position:relative;overflow:hidden;transition:background .3s;}
-.edu-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--blue),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+
+/* STORIA */
+.story-section{background:var(–bg);border-top:1px solid var(–card-border)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:56px}
+@media(max-width:680px){.story-grid{grid-template-columns:1fr;gap:40px}}
+.story-age{font-family:‘Bebas Neue’,sans-serif;font-size:8rem;color:var(–card-border);line-height:1;margin-bottom:-20px}
+.story-name{font-family:‘Bebas Neue’,sans-serif;font-size:3rem;color:var(–white);letter-spacing:.05em}
+.story-body{font-size:.97rem;color:var(–off-white);line-height:1.9;font-weight:300}
+.story-body p+p{margin-top:1.2em}
+.story-body b{color:var(–white);font-weight:400}
+.story-quote{
+border-left:2px solid var(–blue);
+padding:24px 28px;
+background:var(–card-bg);
+margin-top:32px;
+}
+.story-quote p{font-size:1.05rem;font-style:italic;color:var(–off-white);line-height:1.7;font-weight:300}
+
+.edu-section{background:var(–bg3);border-top:1px solid var(–card-border)}
+.edu-intro{font-size:.97rem;color:var(–light-gray);max-width:560px;line-height:1.8;font-weight:300;margin-top:20px;margin-bottom:60px;}
+.edu-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(–card-border)}
+.edu-card{background:var(–card-bg);padding:44px 32px;position:relative;overflow:hidden;transition:background .3s;}
+.edu-card::after{content:’’;position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(–blue),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
 .edu-card:hover{background:#161c30}.edu-card:hover::after{transform:scaleX(1)}
-.edu-icon{font-size:2rem;margin-bottom:20px}.edu-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:#1a2040;line-height:1;position:absolute;top:20px;right:24px;}
-.edu-title{font-size:1.05rem;font-weight:700;letter-spacing:.04em;margin-bottom:12px;color:var(--white)}.edu-desc{font-size:.86rem;color:var(--gray);line-height:1.75;font-weight:300}
-.values-section{background:var(--bg)}.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--card-border);margin-top:60px}
-.val-card{background:var(--card-bg);padding:40px 28px;position:relative;overflow:hidden;transition:background .3s;}
-.val-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .35s ease;}
+.edu-icon{font-size:2rem;margin-bottom:20px}.edu-num{font-family:‘Bebas Neue’,sans-serif;font-size:4rem;color:#1a2040;line-height:1;position:absolute;top:20px;right:24px;}
+.edu-title{font-size:1.05rem;font-weight:700;letter-spacing:.04em;margin-bottom:12px;color:var(–white)}.edu-desc{font-size:.86rem;color:var(–gray);line-height:1.75;font-weight:300}
+.values-section{background:var(–bg)}.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(–card-border);margin-top:60px}
+.val-card{background:var(–card-bg);padding:40px 28px;position:relative;overflow:hidden;transition:background .3s;}
+.val-card::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:var(–blue);transform:scaleX(0);transform-origin:left;transition:transform .35s ease;}
 .val-card:hover{background:#0f1422}.val-card:hover::before{transform:scaleX(1)}
-.val-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:#1a2040;line-height:1;margin-bottom:14px}
-.val-title{font-size:.88rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;color:var(--off-white)}.val-desc{font-size:.83rem;color:var(--gray);line-height:1.7;font-weight:300}
-.statement{padding:120px 40px;text-align:center;background:var(--bg2);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);position:relative;overflow:hidden;}
-.statement::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(--blue-glow),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
-.statement h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,10vw,9rem);line-height:.95;letter-spacing:.01em;position:relative;z-index:1;}
-.statement .italic-sub{font-size:clamp(.95rem,2.5vw,1.4rem);font-style:italic;font-weight:300;color:var(--gray);margin-top:18px;position:relative;z-index:1;}
-.counters{background:var(--bg3);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);}
-.cnt{padding:60px 20px;text-align:center;border-right:1px solid var(--card-border);position:relative;overflow:hidden;}.cnt:last-child{border-right:none}
-.cnt::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center bottom,rgba(26,111,255,.07),transparent 70%);}
-.cnt-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,6vw,5.5rem);color:var(--blue);line-height:1;display:block;text-shadow:0 0 40px rgba(26,111,255,.4);}
-.cnt-label{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-top:10px;}
-.cta-section{padding:120px 40px;text-align:center;background:var(--bg);position:relative;overflow:hidden;}
-.cta-section::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(26,111,255,.12),transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
-.cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,12vw,10rem);line-height:.92;position:relative;z-index:1;}
-.cta-sub{font-size:.97rem;color:var(--light-gray);max-width:400px;margin:24px auto 44px;line-height:1.8;font-weight:300;position:relative;z-index:1;}
+.val-num{font-family:‘Bebas Neue’,sans-serif;font-size:3.5rem;color:#1a2040;line-height:1;margin-bottom:14px}
+.val-title{font-size:.88rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;color:var(–off-white)}.val-desc{font-size:.83rem;color:var(–gray);line-height:1.7;font-weight:300}
+.statement{padding:120px 40px;text-align:center;background:var(–bg2);border-top:1px solid var(–card-border);border-bottom:1px solid var(–card-border);position:relative;overflow:hidden;}
+.statement::before{content:’’;position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(–blue-glow),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+.statement h2{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(3rem,10vw,9rem);line-height:.95;letter-spacing:.01em;position:relative;z-index:1;}
+.statement .italic-sub{font-size:clamp(.95rem,2.5vw,1.4rem);font-style:italic;font-weight:300;color:var(–gray);margin-top:18px;position:relative;z-index:1;}
+.counters{background:var(–bg3);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(–card-border);border-bottom:1px solid var(–card-border);}
+.cnt{padding:60px 20px;text-align:center;border-right:1px solid var(–card-border);position:relative;overflow:hidden;}.cnt:last-child{border-right:none}
+.cnt::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse at center bottom,rgba(26,111,255,.07),transparent 70%);}
+.cnt-num{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(3.5rem,6vw,5.5rem);color:var(–blue);line-height:1;display:block;text-shadow:0 0 40px rgba(26,111,255,.4);}
+.cnt-label{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(–gray);margin-top:10px;}
+.cta-section{padding:120px 40px;text-align:center;background:var(–bg);position:relative;overflow:hidden;}
+.cta-section::before{content:’’;position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(26,111,255,.12),transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+.cta-title{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(3.5rem,12vw,10rem);line-height:.92;position:relative;z-index:1;}
+.cta-sub{font-size:.97rem;color:var(–light-gray);max-width:400px;margin:24px auto 36px;line-height:1.8;font-weight:300;position:relative;z-index:1;}
+
+/* FORM NETLIFY */
 .form-stack{display:flex;flex-direction:column;gap:10px;width:100%;max-width:440px;margin:0 auto;position:relative;z-index:1;}
-.form-stack input{background:var(--card-bg);border:1px solid var(--card-border);color:var(--white);padding:16px 20px;font-family:'Inter',sans-serif;font-size:.9rem;outline:none;transition:border-color .3s,box-shadow .3s;width:100%;}
-.form-stack input:focus{border-color:var(--blue);box-shadow:0 0 20px rgba(26,111,255,.15)}.form-stack input::placeholder{color:#3a4060}
-.btn-send{background:var(--blue);color:#fff;border:none;padding:18px;font-family:'Inter',sans-serif;font-size:.78rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;box-shadow:0 0 40px rgba(26,111,255,.35);transition:box-shadow .3s,transform .2s;}
+.form-stack input{background:var(–card-bg);border:1px solid var(–card-border);color:var(–white);padding:16px 20px;font-family:‘Inter’,sans-serif;font-size:.9rem;outline:none;transition:border-color .3s,box-shadow .3s;width:100%;}
+.form-stack input:focus{border-color:var(–blue);box-shadow:0 0 20px rgba(26,111,255,.15)}.form-stack input::placeholder{color:#3a4060}
+.btn-send{background:var(–blue);color:#fff;border:none;padding:18px;font-family:‘Inter’,sans-serif;font-size:.78rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;box-shadow:0 0 40px rgba(26,111,255,.35);transition:box-shadow .3s,transform .2s;width:100%;}
 .btn-send:hover{box-shadow:0 0 60px rgba(26,111,255,.6);transform:translateY(-2px)}
-.ig-note{font-size:.72rem;color:#3a4060;margin-top:20px;letter-spacing:.06em;position:relative;z-index:1}.ig-note b{color:var(--blue)}
-footer{padding:28px 40px;border-top:1px solid var(--card-border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:var(--bg2);}
-.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.1em}.footer-copy{font-size:.68rem;color:#3a4060;letter-spacing:.08em}
+
+/* WHATSAPP BTN */
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:16px 32px;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;margin-top:12px;position:relative;z-index:1;transition:background .25s,transform .2s;box-shadow:0 0 30px rgba(37,211,102,.3);}
+.btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
+
+.ig-note{font-size:.72rem;color:#3a4060;margin-top:20px;letter-spacing:.06em;position:relative;z-index:1}.ig-note b{color:var(–blue)}
+footer{padding:28px 40px;border-top:1px solid var(–card-border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:var(–bg2);}
+.footer-logo{font-family:‘Bebas Neue’,sans-serif;font-size:1.1rem;letter-spacing:.1em}.footer-copy{font-size:.68rem;color:#3a4060;letter-spacing:.08em}
 .sr{opacity:0;transform:translateY(36px);transition:opacity .85s ease,transform .85s ease}
 .sr-l{opacity:0;transform:translateX(-36px);transition:opacity .85s ease,transform .85s ease}
 .sr-r{opacity:0;transform:translateX(36px);transition:opacity .85s ease,transform .85s ease}
 .sr.vis,.sr-l.vis,.sr-r.vis{opacity:1;transform:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
-@media(max-width:600px){nav{padding:18px 20px}.section{padding:80px 20px}.statement,.cta-section{padding:80px 20px}.counters{grid-template-columns:1fr 1fr}.cnt{border-bottom:1px solid var(--card-border)}#hero{padding:100px 20px 70px}.scroll-hint{left:20px}}
+@media(max-width:600px){nav{padding:18px 20px}.section{padding:80px 20px}.statement,.cta-section{padding:80px 20px}.counters{grid-template-columns:1fr 1fr}.cnt{border-bottom:1px solid var(–card-border)}#hero{padding:100px 20px 70px}.scroll-hint{left:20px}}
 </style>
+
 </head>
 <body>
+
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
-<div id="loader"><div id="loader-word">CRESCI</div><div id="loader-bar-wrap"><div id="loader-bar"></div></div></div>
-<nav><span class="nav-logo">Mirko Alogna</span><a href="#contatto" class="nav-cta">Entra nel team →</a></nav>
+
+<div id="loader">
+  <div id="loader-word">CRESCI</div>
+  <div id="loader-bar-wrap"><div id="loader-bar"></div></div>
+</div>
+
+<nav>
+  <span class="nav-logo">Mirko Alogna</span>
+  <a href="#contatto" class="nav-cta">Entra nel team →</a>
+</nav>
+
+<!-- HERO -->
+
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-tag">📲 Dal tuo Instagram — benvenuto</div>
@@ -103,85 +143,185 @@ footer{padding:28px 40px;border-top:1px solid var(--card-border);display:flex;ju
       <span class="line2">DA</span>
       <span class="line3">TE.</span>
     </div>
-    <p class="hero-desc">Non ti vendo un sogno. Ti mostro un sistema che funziona — <strong>viaggi, relazioni, educazione finanziaria, libertà.</strong></p>
+    <p class="hero-desc">Hai 2 scelte nella vita — <strong>seguire il tuo sogno o accontentarti dell'incubo che si crea.</strong> Io ho scelto. E ti mostro come fare lo stesso.</p>
     <div class="hero-actions">
       <a href="#contatto" class="btn-primary">Voglio cambiare</a>
-      <a href="#cosa-faccio" class="btn-ghost">Scopri prima ↓</a>
+      <a href="#storia" class="btn-ghost">La mia storia ↓</a>
     </div>
   </div>
   <div class="scroll-hint"><div class="scroll-line"></div><span>scroll</span></div>
 </section>
+
+<!-- MARQUEE 1 -->
+
 <div class="marquee-wrap"><div class="marquee-track"><span class="word">NETWORK MARKETING</span><span class="dot">◆</span><span class="word">LIBERTÀ FINANZIARIA</span><span class="dot">◆</span><span class="word">CRESCITA PERSONALE</span><span class="dot">◆</span><span class="word">COMMUNITY</span><span class="dot">◆</span><span class="word">EDUCAZIONE FINANZIARIA</span><span class="dot">◆</span><span class="word">VIAGGI</span><span class="dot">◆</span><span class="word">NETWORK MARKETING</span><span class="dot">◆</span><span class="word">LIBERTÀ FINANZIARIA</span><span class="dot">◆</span><span class="word">CRESCITA PERSONALE</span><span class="dot">◆</span><span class="word">COMMUNITY</span><span class="dot">◆</span><span class="word">EDUCAZIONE FINANZIARIA</span><span class="dot">◆</span><span class="word">VIAGGI</span><span class="dot">◆</span></div></div>
+
+<!-- LA MIA STORIA -->
+
+<section class="section story-section" id="storia">
+  <div class="section-inner">
+    <p class="section-label sr">Chi sono</p>
+    <h2 class="section-title sr">LA MIA<br/><span style="color:var(--blue)">STORIA.</span></h2>
+    <div class="story-grid">
+      <div class="sr-l">
+        <div class="story-age">22</div>
+        <div class="story-name">MIRKO ALOGNA</div>
+      </div>
+      <div class="sr-r">
+        <div class="story-body">
+          <p>Ho 22 anni e per tanto tempo sono stato <b>confuso su cosa fare della mia vita.</b> Guardavo gli altri andare avanti, accettare situazioni che li soffocavano, rassegnarsi. E quella cosa mi dava fastidio — un fastidio viscerale.</p>
+          <p>Non volevo finire così. Ma non sapevo neanche da dove iniziare.</p>
+          <p>Poi, un giorno — per quello che io chiamo destino, vibrazione, chiamalo come vuoi — <b>un vecchio amico mi parla di un certo lavoro online.</b> Ero scettico. Gli dissi praticamente di andare a quel paese.</p>
+          <p>Eppure eccomi qui.</p>
+          <p>Non ho una storia straordinaria. Non ero un genio, non avevo capitali, non avevo un piano. Avevo solo <b>la stanchezza di accontentarmi</b> — e quella si è rivelata la mia forza più grande.</p>
+        </div>
+        <div class="story-quote sr">
+          <p>"Nella vita abbiamo due scelte: seguire il nostro sogno, o accontentarci dell'incubo che si crea."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COSA FACCIO -->
+
 <section class="section what-bg" id="cosa-faccio">
   <div class="section-inner">
     <p class="section-label sr">Di cosa mi occupo</p>
     <h2 class="section-title sr">DI COSA<br/>MI <span style="color:var(--blue)">OCCUPO?</span></h2>
     <div class="what-grid">
-      <div class="sr-l"><p class="what-body">Lavoro nel <b>Network Marketing</b> — un modello basato sulle relazioni umane, sulla fiducia e sulla duplicazione.<br/><br/>Non sono un venditore. Sono qualcuno che ha trovato un sistema e aiuta altri a farlo funzionare per sé.<br/><br/>Il mio focus? <b>Costruire persone prima che reti.</b></p></div>
+      <div class="sr-l">
+        <p class="what-body">Lavoro nel <b>Network Marketing</b> — un modello basato sulle relazioni umane, sulla fiducia e sulla duplicazione.<br/><br/>Non sono un venditore. Sono qualcuno che ha trovato un sistema, l'ha fatto funzionare, e ora aiuta altri a fare lo stesso.<br/><br/>Il mio focus? <b>Costruire persone prima che reti.</b></p>
+      </div>
       <div class="sr-r" style="display:flex;flex-direction:column;gap:16px">
-        <div style="background:var(--card-bg);border:1px solid var(--card-border);padding:28px 24px"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.1em;color:var(--blue);margin-bottom:8px">Il modello</div><div style="font-size:.85rem;color:var(--gray);line-height:1.7;font-weight:300">Entri, impari, costruisci la tua rete. Il sistema cresce con te — e lavora anche quando non lo fai.</div></div>
-        <div style="background:var(--card-bg);border:1px solid var(--card-border);padding:28px 24px"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.1em;color:var(--blue);margin-bottom:8px">Chi cerco</div><div style="font-size:.85rem;color:var(--gray);line-height:1.7;font-weight:300">Persone ambiziose, curiose, disposte a mettersi in gioco. L'esperienza non serve — la voglia di cambiare sì.</div></div>
+        <div style="background:var(--card-bg);border:1px solid var(--card-border);padding:28px 24px">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.1em;color:var(--blue);margin-bottom:8px">Il modello</div>
+          <div style="font-size:.85rem;color:var(--gray);line-height:1.7;font-weight:300">Entri, impari, costruisci la tua rete. Il sistema cresce con te — e lavora anche quando non lo fai.</div>
+        </div>
+        <div style="background:var(--card-bg);border:1px solid var(--card-border);padding:28px 24px">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.1em;color:var(--blue);margin-bottom:8px">Chi cerco</div>
+          <div style="font-size:.85rem;color:var(--gray);line-height:1.7;font-weight:300">Persone ambiziose, curiose, stufe di accontentarsi. L'esperienza non serve — la voglia di cambiare sì.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- EDUCAZIONE FINANZIARIA -->
+
 <section class="section edu-section">
   <div class="section-inner">
     <p class="section-label sr">Perché è importante</p>
     <h2 class="section-title sr">EDUCAZIONE<br/><span style="color:var(--blue)">FINANZIARIA.</span></h2>
-    <p class="edu-intro sr">A scuola non te l'hanno insegnato. In famiglia probabilmente nemmeno. Eppure capire come funzionano i soldi cambia tutto — le scelte, le relazioni, il futuro.</p>
+    <p class="edu-intro sr">A scuola non te l'hanno insegnato. In famiglia probabilmente nemmeno. Eppure capire come funzionano davvero i soldi cambia tutto — le scelte, le relazioni, il futuro.</p>
     <div class="edu-cards">
-      <div class="edu-card sr"><div class="edu-num">01</div><div class="edu-icon">🧠</div><div class="edu-title">Mentalità da ricco, non da dipendente</div><div class="edu-desc">Il 95% delle persone lavora per i soldi. Il 5% fa lavorare i soldi per sé. Ti insegno a pensare come quel 5% — senza partire con capitali enormi, ma con la testa giusta.</div></div>
-      <div class="edu-card sr"><div class="edu-num">02</div><div class="edu-icon">📈</div><div class="edu-title">Reddito attivo vs reddito passivo</div><div class="edu-desc">Un lavoro tradizionale ti paga solo se sei presente. Un sistema duplicabile ti genera reddito mentre dormi, viaggi, vivi.</div></div>
-      <div class="edu-card sr"><div class="edu-num">03</div><div class="edu-icon">🌐</div><div class="edu-title">Una community che cresce con te</div><div class="edu-desc">Non impari da solo. Entri in un ambiente dove tutti parlano di crescita, investimenti, opportunità.</div></div>
+      <div class="edu-card sr"><div class="edu-num">01</div><div class="edu-icon">🧠</div><div class="edu-title">Mentalità da costruttore</div><div class="edu-desc">Il 95% delle persone lavora per i soldi. Il 5% fa lavorare i soldi per sé. Prima cambia la testa, poi cambia tutto il resto.</div></div>
+      <div class="edu-card sr"><div class="edu-num">02</div><div class="edu-icon">📈</div><div class="edu-title">Reddito attivo vs passivo</div><div class="edu-desc">Un lavoro tradizionale ti paga solo se sei presente. Un sistema duplicabile ti genera entrate mentre dormi, viaggi, vivi.</div></div>
+      <div class="edu-card sr"><div class="edu-num">03</div><div class="edu-icon">🌐</div><div class="edu-title">L'ambiente che ti plasma</div><div class="edu-desc">Entri in una community dove tutti parlano di crescita, investimenti, opportunità reali. L'ambiente che frequenti determina chi diventi.</div></div>
     </div>
   </div>
 </section>
-<div class="statement sr"><h2>NON È<br/><span style="color:var(--blue)">QUESTIONE</span><br/>DI SOLDI.</h2><p class="italic-sub">È questione di vita. Cosa scegli per te?</p></div>
+
+<!-- STATEMENT -->
+
+<div class="statement sr">
+  <h2>NON È<br/><span style="color:var(--blue)">QUESTIONE</span><br/>DI SOLDI.</h2>
+  <p class="italic-sub">È questione di vita. Cosa scegli per te?</p>
+</div>
+
+<!-- VALORI -->
+
 <section class="section values-section">
   <div class="section-inner">
     <p class="section-label sr">Quello che ottieni davvero</p>
     <h2 class="section-title sr">RELAZIONI.<br/>ESPERIENZE.<br/><span style="color:var(--blue)">LIBERTÀ.</span></h2>
     <div class="values-grid">
-      <div class="val-card sr"><div class="val-num">01</div><div class="val-title">Relazioni vere</div><div class="val-desc">Un team che ti vuole bene davvero. Amicizie che nascono dalla crescita condivisa.</div></div>
-      <div class="val-card sr"><div class="val-num">02</div><div class="val-title">Esperienze uniche</div><div class="val-desc">Convention internazionali, viaggi di team, eventi dal vivo.</div></div>
-      <div class="val-card sr"><div class="val-num">03</div><div class="val-title">Crescita personale</div><div class="val-desc">Comunicazione, leadership, mentalità. Competenze per tutta la vita.</div></div>
-      <div class="val-card sr"><div class="val-num">04</div><div class="val-title">Libertà totale</div><div class="val-desc">Dal telefono, da casa, in treno. Nessun capo, nessun orario fisso.</div></div>
+      <div class="val-card sr"><div class="val-num">01</div><div class="val-title">Relazioni vere</div><div class="val-desc">Un team dove le persone si vogliono bene davvero. Non colleghi — persone con cui cresci e costruisci qualcosa.</div></div>
+      <div class="val-card sr"><div class="val-num">02</div><div class="val-title">Esperienze uniche</div><div class="val-desc">Convention internazionali, viaggi di team, eventi dal vivo. Cose che non dimentichi.</div></div>
+      <div class="val-card sr"><div class="val-num">03</div><div class="val-title">Crescita personale</div><div class="val-desc">Comunicazione, leadership, mentalità. Competenze che porti con te per tutta la vita.</div></div>
+      <div class="val-card sr"><div class="val-num">04</div><div class="val-title">Libertà totale</div><div class="val-desc">Dal telefono, da casa, in treno. Nessun capo, nessun orario fisso. Si adatta alla tua vita.</div></div>
     </div>
   </div>
 </section>
+
+<!-- COUNTERS -->
+
 <div class="counters">
-  <div class="cnt sr"><span class="cnt-num" data-target="3">0</span><div class="cnt-label">Anni nel settore</div></div>
+  <div class="cnt sr"><span class="cnt-num" data-target="22">0</span><div class="cnt-label">Anni</div></div>
   <div class="cnt sr"><span class="cnt-num" data-target="47">0</span><div class="cnt-label">Persone nel team</div></div>
   <div class="cnt sr"><span class="cnt-num" data-target="6">0</span><div class="cnt-label">Paesi raggiunti</div></div>
   <div class="cnt sr"><span class="cnt-num" data-target="100">0</span><div class="cnt-label">% dedizione</div></div>
 </div>
-<div class="marquee-wrap"><div class="marquee-track rev"><span class="word">SACRIFICIO = RISULTATI</span><span class="dot">◆</span><span class="word">NON ESISTE LA FORMULA</span><span class="dot">◆</span><span class="word">ESISTE LA VOGLIA</span><span class="dot">◆</span><span class="word">DI AVERE DI PIÙ</span><span class="dot">◆</span><span class="word">NULLA CAMBIA</span><span class="dot">◆</span><span class="word">SACRIFICIO = RISULTATI</span><span class="dot">◆</span><span class="word">NON ESISTE LA FORMULA</span><span class="dot">◆</span><span class="word">ESISTE LA VOGLIA</span><span class="dot">◆</span><span class="word">DI AVERE DI PIÙ</span><span class="dot">◆</span><span class="word">NULLA CAMBIA</span><span class="dot">◆</span></div></div>
+
+<!-- MARQUEE 2 -->
+
+<div class="marquee-wrap"><div class="marquee-track rev"><span class="word">SEGUI IL TUO SOGNO</span><span class="dot">◆</span><span class="word">O ACCETTANE L'INCUBO</span><span class="dot">◆</span><span class="word">SACRIFICIO = RISULTATI</span><span class="dot">◆</span><span class="word">NON ESISTE LA FORMULA</span><span class="dot">◆</span><span class="word">ESISTE LA VOGLIA</span><span class="dot">◆</span><span class="word">SEGUI IL TUO SOGNO</span><span class="dot">◆</span><span class="word">O ACCETTANE L'INCUBO</span><span class="dot">◆</span><span class="word">SACRIFICIO = RISULTATI</span><span class="dot">◆</span><span class="word">NON ESISTE LA FORMULA</span><span class="dot">◆</span><span class="word">ESISTE LA VOGLIA</span><span class="dot">◆</span></div></div>
+
+<!-- CTA -->
+
 <section class="cta-section" id="contatto">
   <h2 class="cta-title sr">CAMBIA<br/><span style="color:var(--blue)">TUTTO</span><br/>ORA.</h2>
-  <p class="cta-sub sr">Una conversazione non impegna a nulla. Ma potrebbe cambiare tutto. Lasciami i tuoi contatti — ti scrivo io entro 24h.</p>
-  <div class="form-stack sr">
-    <input type="text" placeholder="Il tuo nome"/>
-    <input type="email" placeholder="Email"/>
-    <input type="tel" placeholder="Numero WhatsApp"/>
-    <button class="btn-send" id="send-btn">INVIA — VOGLIO CAMBIARE</button>
-  </div>
+  <p class="cta-sub sr">Una conversazione non impegna a nulla. Ma potrebbe cambiare tutto. Lascia i tuoi contatti — ti scrivo entro 24h. O scrivimi direttamente su WhatsApp.</p>
+
+  <!-- NETLIFY FORM -->
+
+  <form name="contatti" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="form-stack sr" id="main-form">
+    <input type="hidden" name="form-name" value="contatti"/>
+    <input type="hidden" name="bot-field"/>
+    <input type="text" name="nome" placeholder="Il tuo nome" required/>
+    <input type="email" name="email" placeholder="Email" required/>
+    <input type="tel" name="whatsapp" placeholder="Numero WhatsApp" required/>
+    <button type="submit" class="btn-send">INVIA — VOGLIO CAMBIARE</button>
+  </form>
+
+  <a href="https://wa.me/393494473358" target="_blank" class="btn-wa sr">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Scrivimi su WhatsApp
+  </a>
+
   <p class="ig-note sr">Sei arrivato dal mio profilo <b>Instagram</b>? Sei esattamente nel posto giusto.</p>
 </section>
-<footer><span class="footer-logo">Mirko Alogna</span><span class="footer-copy">© 2026 — NETWORK MARKETING</span></footer>
+
+<footer>
+  <span class="footer-logo">Mirko Alogna</span>
+  <span class="footer-copy">© 2026 — NETWORK MARKETING</span>
+</footer>
+
 <script>
 const bar=document.getElementById('loader-bar');
 const loader=document.getElementById('loader');
 let w=0;
 const iv=setInterval(()=>{w+=Math.random()*22;if(w>=100){w=100;clearInterval(iv);setTimeout(()=>{loader.style.opacity='0';loader.style.transition='opacity .5s';setTimeout(()=>loader.style.display='none',500);},250);}bar.style.width=w+'%';},55);
+
 const cur=document.getElementById('cursor');const ring=document.getElementById('cursor-ring');let rx=0,ry=0,mx=0,my=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
 function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);}animRing();
-document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='52px';ring.style.height='52px';});el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='34px';ring.style.height='34px';});});
-const allSr=document.querySelectorAll('.sr,.sr-l,.sr-r');document.querySelectorAll('.edu-card,.val-card').forEach((c,i)=>{c.style.transitionDelay=(i*.1)+'s';});
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:0.08});allSr.forEach(el=>obs.observe(el));
-const cnts=document.querySelectorAll('.cnt-num');const cObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,target=+el.dataset.target;let cur2=0;const step=target/55;const t=setInterval(()=>{cur2+=step;if(cur2>=target){cur2=target;clearInterval(t);}el.textContent=Math.floor(cur2)+(target===100?'%':'+');},28);cObs.unobserve(el);});},{threshold:.5});cnts.forEach(c=>cObs.observe(c));
-document.getElementById('send-btn').addEventListener('click',function(){const inputs=this.closest('.form-stack').querySelectorAll('input');let ok=true;inputs.forEach(i=>{if(!i.value.trim()){i.style.borderColor='#ff3355';ok=false;}else i.style.borderColor='';});if(ok){this.textContent='✓ Ricevuto! Ti scrivo presto 🔵';this.style.background='#1450cc';this.style.boxShadow='0 0 40px rgba(20,80,204,.5)';}});
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='52px';ring.style.height='52px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='34px';ring.style.height='34px';});
+});
+
+const allSr=document.querySelectorAll('.sr,.sr-l,.sr-r');
+document.querySelectorAll('.edu-card,.val-card').forEach((c,i)=>{c.style.transitionDelay=(i*.1)+'s';});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:0.08});
+allSr.forEach(el=>obs.observe(el));
+
+const cnts=document.querySelectorAll('.cnt-num');
+const cObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,target=+el.dataset.target;let cur2=0;const step=target/55;const t=setInterval(()=>{cur2+=step;if(cur2>=target){cur2=target;clearInterval(t);}el.textContent=Math.floor(cur2)+(target===100?'%':'+');},28);cObs.unobserve(el);});
+},{threshold:.5});
+cnts.forEach(c=>cObs.observe(c));
+
+// NETLIFY FORM SUCCESS
+document.getElementById('main-form').addEventListener('submit',function(e){
+  const btn = this.querySelector('.btn-send');
+  setTimeout(()=>{
+    btn.textContent='✓ Ricevuto! Ti scrivo entro 24h 🔵';
+    btn.style.background='#1450cc';
+    btn.style.boxShadow='0 0 40px rgba(20,80,204,.5)';
+  },500);
+});
 </script>
+
 </body>
 </html>
